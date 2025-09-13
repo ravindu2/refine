@@ -17,7 +17,7 @@ jobs:
 
       - name: Add original repo as remote
         run: |
-          git remote add upstream https://github.com/ORIGINAL_OWNER/REPO.git
+          git remote add upstream https://github.com/refinedev/refine
           git fetch upstream 'refs/pull/*/head:refs/remotes/upstream/pr/*'
 
       - name: Push PR branches to fork
