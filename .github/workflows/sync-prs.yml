@@ -1,0 +1,28 @@
+name: Sync PR branches
+
+on:
+  workflow_dispatch:  # You can manually trigger
+  schedule:
+    - cron: '0 0 * * *'  # Optional: run daily at midnight UTC
+
+jobs:
+  sync-prs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout fork
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history
+
+      - name: Add original repo as remote
+        run: |
+          git remote add upstream https://github.com/ORIGINAL_OWNER/REPO.git
+          git fetch upstream 'refs/pull/*/head:refs/remotes/upstream/pr/*'
+
+      - name: Push PR branches to fork
+        run: |
+          for branch in $(git branch -r | grep 'upstream/pr/' | sed 's|upstream/||'); do
+            git checkout -B ${branch#pr/} $branch
+            git push origin ${branch#pr/} --force
+          done
