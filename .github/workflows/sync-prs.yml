@@ -1,9 +1,9 @@
 name: Sync PR branches
 
 on:
-  workflow_dispatch:  # You can manually trigger
+  workflow_dispatch:  # Manual trigger
   schedule:
-    - cron: '0 0 * * *'  # Optional: run daily at midnight UTC
+    - cron: '0 0 * * *'  # Optional: daily at midnight UTC
 
 jobs:
   sync-prs:
@@ -11,13 +11,14 @@ jobs:
 
     steps:
       - name: Checkout fork
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0  # Fetch all history
 
       - name: Add original repo as remote
         run: |
-          git remote add upstream https://github.com/refinedev/refine
+          git remote add upstream https://github.com/ORIGINAL_OWNER/REPO.git
           git fetch upstream 'refs/pull/*/head:refs/remotes/upstream/pr/*'
 
       - name: Push PR branches to fork
