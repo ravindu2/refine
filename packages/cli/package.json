@@ -34,7 +34,7 @@
     "types": "node ../shared/generate-declarations.js"
   },
   "dependencies": {
-    "@npmcli/package-json": "^5.2.0",
+    "@npmcli/package-json": "^7.0.3",
     "@refinedev/devtools-server": "2.0.1",
     "boxen": "^5.1.2",
     "camelcase": "^6.2.0",
