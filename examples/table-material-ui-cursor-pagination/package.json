@@ -31,7 +31,7 @@
     "@refinedev/core": "^5.0.9",
     "@refinedev/mui": "^8.0.0",
     "@refinedev/react-router": "^2.0.3",
-    "axios": "^1.11.0",
+    "axios": "^1.13.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.0.2"
