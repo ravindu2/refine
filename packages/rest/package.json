@@ -85,7 +85,7 @@
   "dependencies": {
     "deepmerge": "^4.3.1",
     "ky": "^1.10.0",
-    "qs": "^6.10.1"
+    "qs": "^6.15.2"
   },
   "devDependencies": {
     "@esbuild-plugins/node-resolve": "^0.1.4",
