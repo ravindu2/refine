@@ -31,7 +31,7 @@
     "@refinedev/simple-rest": "^6.0.1",
     "@uiw/react-md-editor": "^4.0.8",
     "antd": "^5.23.0",
-    "axios": "^1.11.0",
+    "axios": "^1.13.5",
     "keycloak-js": "^25.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
