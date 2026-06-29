@@ -25,7 +25,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@npmcli/package-json": "^5.2.0",
+    "@npmcli/package-json": "^7.0.3",
     "chalk": "^4.1.2",
     "cheerio": "1.0.0-rc.9",
     "execa": "^5.1.1",
